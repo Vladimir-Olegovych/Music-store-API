@@ -1,5 +1,6 @@
 package gigcreator.controllers
 
+import gigcreator.constants.Constants
 import gigcreator.entities.UserData
 import gigcreator.repositories.UserDataRepository
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,22 +17,33 @@ open class MainController(private val userDataRepository: UserDataRepository) {
 
     @GetMapping("/save")
     private fun saveUser(@RequestParam email: String,
-                         @RequestParam password: String): String {
+                         @RequestParam password: String,
+                         @RequestParam key: String): String {
         val user = UserData()
         user.email = email
         user.password = password
-
-        return userDataRepository.save(user).email
+        
+        return try {
+            if (key == Constants.KEY) {
+                userDataRepository.save(user)
+                "data has been sent"
+            }else {
+                "invalid key"
+            }
+        }catch (e: Throwable){
+            "data identity error"
+        }
     }
 
     @GetMapping("/read")
-    private fun readUser(): List<UserData> {
-        return userDataRepository.findAll()
+    private fun readUser(@RequestParam key: String): List<UserData> {
+        return if (key == Constants.KEY) userDataRepository.findAll() else listOf()
     }
 
     @GetMapping("/search")
-    private fun searchUser(@RequestParam email: String): List<UserData> {
-        return userDataRepository.searchByEmail(email)
+    private fun searchUser(@RequestParam email: String,
+                           @RequestParam key: String): List<UserData> {
+        return if (key == Constants.KEY) userDataRepository.searchByEmail(email) else listOf()
     }
 
 }
