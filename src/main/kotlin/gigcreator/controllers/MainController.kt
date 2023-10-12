@@ -22,7 +22,7 @@ open class MainController(private val userDataRepository: UserDataRepository) {
         val user = UserData()
         user.email = email
         user.password = password
-        
+
         return try {
             if (key == Constants.KEY) {
                 userDataRepository.save(user)
@@ -42,8 +42,16 @@ open class MainController(private val userDataRepository: UserDataRepository) {
 
     @GetMapping("/search")
     private fun searchUser(@RequestParam email: String,
-                           @RequestParam key: String): List<UserData> {
-        return if (key == Constants.KEY) userDataRepository.searchByEmail(email) else listOf()
+                           @RequestParam key: String): UserData {
+        return try {
+            if (key == Constants.KEY){
+                userDataRepository.searchByEmail(email)
+            } else {
+                UserData()
+            }
+        } catch (e: Throwable){
+            UserData()
+        }
     }
 
 }

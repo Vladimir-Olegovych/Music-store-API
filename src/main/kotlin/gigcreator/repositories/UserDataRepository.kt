@@ -7,5 +7,5 @@ import org.springframework.data.repository.query.Param
 
 interface UserDataRepository: JpaRepository<UserData, Int> {
     @Query("SELECT u FROM UserData u WHERE (u.email = :email)")
-    fun searchByEmail(@Param("email") email: String): List<UserData>
+    fun searchByEmail(@Param("email") email: String): UserData
 }
