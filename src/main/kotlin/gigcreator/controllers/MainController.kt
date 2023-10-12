@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.util.*
 
 @RestController
-open class MainController(private val repository: UserDataRepository) {
+open class MainController(private val userDataRepository: UserDataRepository) {
 
 
     @GetMapping("/")
@@ -18,20 +18,20 @@ open class MainController(private val repository: UserDataRepository) {
     private fun saveUser(@RequestParam email: String,
                          @RequestParam password: String): String {
         val user = UserData()
-
         user.email = email
         user.password = password
 
-        return repository.save(user).id
+        return userDataRepository.save(user).email
     }
 
     @GetMapping("/read")
     private fun readUser(): List<UserData> {
-        return repository.findAll()
+        return userDataRepository.findAll()
     }
 
     @GetMapping("/search")
-    private fun readUser(@RequestParam id: Int): UserData {
-        return repository.findById(id).get()
+    private fun searchUser(@RequestParam email: String): List<UserData> {
+        return userDataRepository.searchByEmail(email)
     }
+
 }
