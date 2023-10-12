@@ -12,7 +12,7 @@ import jakarta.persistence.Table
 class UserData {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    val id: String = ""
+    var id: String = ""
     var email: String = ""
     var password: String = ""
 }

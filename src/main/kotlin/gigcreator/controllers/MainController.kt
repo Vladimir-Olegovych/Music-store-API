@@ -1,6 +1,7 @@
 package gigcreator.controllers
 
 import gigcreator.constants.Constants
+import gigcreator.entities.Result
 import gigcreator.entities.UserData
 import gigcreator.repositories.UserDataRepository
 import org.springframework.web.bind.annotation.GetMapping
@@ -18,7 +19,7 @@ open class MainController(private val userDataRepository: UserDataRepository) {
     @GetMapping("/save")
     private fun saveUser(@RequestParam email: String,
                          @RequestParam password: String,
-                         @RequestParam key: String): String {
+                         @RequestParam key: String): Result {
         val user = UserData()
         user.email = email
         user.password = password
@@ -26,12 +27,12 @@ open class MainController(private val userDataRepository: UserDataRepository) {
         return try {
             if (key == Constants.KEY) {
                 userDataRepository.save(user)
-                "data has been sent"
+                Result("info sent")
             }else {
-                "invalid key"
+                Result("invalid key")
             }
         }catch (e: Throwable){
-            "data identity error"
+            Result("duplicate error")
         }
     }
 
