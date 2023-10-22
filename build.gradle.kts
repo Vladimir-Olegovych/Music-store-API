@@ -10,7 +10,6 @@ tasks.test { useJUnitPlatform() }
 apply(plugin = "io.spring.dependency-management")
 
 dependencies {
-
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.postgresql:postgresql")
 

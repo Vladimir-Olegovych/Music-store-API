@@ -16,7 +16,7 @@ open class MainController(private val userDataRepository: UserDataRepository) {
     @GetMapping("/")
     private fun getMain() = "main"
 
-    @GetMapping("/save")
+    @GetMapping("/user/save")
     private fun saveUser(@RequestParam email: String,
                          @RequestParam password: String,
                          @RequestParam key: String): Result {
@@ -36,12 +36,12 @@ open class MainController(private val userDataRepository: UserDataRepository) {
         }
     }
 
-    @GetMapping("/read")
+    @GetMapping("/user")
     private fun readUser(@RequestParam key: String): List<UserData> {
         return if (key == Constants.KEY) userDataRepository.findAll() else listOf()
     }
 
-    @GetMapping("/search")
+    @GetMapping("/user/search")
     private fun searchUser(@RequestParam email: String,
                            @RequestParam key: String): UserData {
         return try {
