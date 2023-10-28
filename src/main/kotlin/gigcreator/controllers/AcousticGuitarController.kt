@@ -58,7 +58,7 @@ class AcousticGuitarController(private val acousticGuitarRepository: AcousticGui
         guitar.name = name
         guitar.description = description
         guitar.technical_description = technical_description
-        guitar.image = "http://178.163.63.165:27015/guitar/acoustic/search?id=$id"
+        guitar.image = id.toString()
         return if (key == Constants.KEY){
             acousticGuitarRepository.save(guitar)
             Result("saved")

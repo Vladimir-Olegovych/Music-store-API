@@ -27,7 +27,7 @@ open class MainController(private val userDataRepository: UserDataRepository) {
         return try {
             if (key == Constants.KEY) {
                 userDataRepository.save(user)
-                Result("info sent")
+                Result("success")
             }else {
                 Result("invalid key")
             }
