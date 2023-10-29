@@ -22,7 +22,7 @@ import java.util.*
 @RestController
 class AcousticGuitarController(private val acousticGuitarRepository: AcousticGuitarRepository) {
 
-    @GetMapping("/guitar/acoustic/image")
+    @GetMapping("/guitar/acoustic/search/image")
     fun getGuitarById(@RequestParam id: String): ResponseEntity<StreamingResponseBody>{
 
         val resource = File("images/$id.png")
@@ -34,6 +34,27 @@ class AcousticGuitarController(private val acousticGuitarRepository: AcousticGui
             .contentLength(length)
             .body(ContentStream(input, length))
     }
+    //
+    @GetMapping("/guitar/acoustic/search/name")
+    fun searchAcousticGuitarByName(@RequestParam name: String): List<AcousticGuitarData>{
+        return acousticGuitarRepository.searchByName(name)
+    }
+
+    @GetMapping("/guitar/acoustic/search/brand")
+    fun searchAcousticGuitarByBrand(@RequestParam name: String): List<AcousticGuitarData>{
+        return acousticGuitarRepository.searchByBrand(name)
+    }
+
+    @GetMapping("/guitar/acoustic/search/price")
+    fun searchAcousticGuitarByPrice(@RequestParam name: String): List<AcousticGuitarData>{
+        return acousticGuitarRepository.searchByPrice(name)
+    }
+
+    @GetMapping("/guitar/acoustic/search/strings")
+    fun searchAcousticGuitarByStrings(@RequestParam name: Int): List<AcousticGuitarData>{
+        return acousticGuitarRepository.searchByStrings(name)
+    }
+
     @GetMapping("/guitar/acoustic")
     fun readAcousticGuitar(): List<AcousticGuitarData>{
         return acousticGuitarRepository.findAll()
