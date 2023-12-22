@@ -14,6 +14,6 @@ open class Main {
 fun main(args: Array<out String>) {
     val context = SpringApplication.run(arrayOf(Main::class.java), args)
     var line = readln()
-    while (line != "sus") line = readln()
+    while (line != "exit") line = readln()
     context.close()
 }

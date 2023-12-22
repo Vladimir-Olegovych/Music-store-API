@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f48cbe1-8be8-4e3a-8a47-ceb43a33b25b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/gigcreator/controllers/AcousticGuitarController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/controllers/AcousticGuitarController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/gigcreator/repositories/AcousticGuitarRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/repositories/AcousticGuitarRepository.kt" afterDir="false" />
+    <list default="true" id="cd8292b7-7550-4334-b5b9-534d378b2b12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/controllers/ElectricGuitarController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/entities/ElectricGuitarData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/repositories/ElectricGuitarRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/gigcreator/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/gigcreator/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,42 +21,13 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="PostgeSQL" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
-        <option value="Kotlin Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2WctDQWZzqftRWlFT6jRCIYdog8" />
+  <component name="ProjectId" id="2ZtZoLiGBtYF8h3REhyfk1NNqgc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,26 +36,18 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexey\IntelliJProgects\PostgeSQL" />
-      <recent name="C:\Users\Alexey\IntelliJProgects\PostgeSQL\src\main\kotlin\gigcreator\constants" />
-      <recent name="C:\Users\Alexey\IntelliJProgects\PostgeSQL\src\main\resources\images" />
-      <recent name="C:\Users\Alexey\IntelliJProgects\PostgeSQL\src\main\resources" />
-      <recent name="C:\Users\Alexey\IntelliJProgects\PostgeSQL\src\main\kotlin\gigcreator\app" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="gigcreator.controllers" />
+      <recent name="gigcreator.entities" />
       <recent name="gigcreator.repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="PostgeSQL-jar" type="GradleRunConfiguration" factoryName="Gradle">
+  <component name="RunManager">
+    <configuration name="PostgeSQL [:bootJar]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -103,28 +69,11 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gigcreator.MainKt" />
-      <module name="PostgeSQL.main" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Gradle.PostgeSQL-jar" />
-      <item itemvalue="Kotlin.MainKt" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.MainKt" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9f48cbe1-8be8-4e3a-8a47-ceb43a33b25b" name="Changes" comment="" />
+      <changelist id="cd8292b7-7550-4334-b5b9-534d378b2b12" name="Changes" comment="" />
       <created>1681026333741</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
